@@ -54,27 +54,27 @@ class SessionController extends Controller
                 if(Auth::user()->groupid == 'patient'){
                     return redirect('/preview');
                 }else if(strtoupper(Auth::user()->groupid) == 'DOCTOR'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'REHABILITATION'){
                     $this->setsession_($request);
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'PHYSIOTERAPHY'){
                     $this->setsession_($request);
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'DIETICIAN'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'CLINICAL'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'ADMIN'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'MR'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'REGISTER'){
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }else if(strtoupper(Auth::user()->groupid) == 'PATHLAB'){
-                    return redirect('/labresult');
+                    return redirect('/casenote');
                 }else{
-                    return redirect('/dialysis');
+                    return redirect('/casenote');
                 }
             }else{
                 return back()->withErrors(['Try again, Password entered incorrect']);
