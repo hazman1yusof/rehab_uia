@@ -143,13 +143,7 @@
     @else
         <a class="item {{(Request::is('mainlanding') ? 'active' : '')}}" href="{{url('/mainlanding')}}"><i style="float: left" class="users inverted icon big link"></i>Patient List</a>
 
-        <a class="item {{(Request::is('emergency') ? 'active' : '')}}" href="{{ url('/emergency')}}"><i style="float: left" class="folder open inverted big icon link"></i>Document Upload</a>
-
         <a class="item {{(Request::is('doctornote') ? 'active' : '')}}" href="{{ url('/doctornote')}}"><i style="float: left" class="stethoscope inverted big icon link"></i>Case Note</a>
-        
-        <a class="item @if(Request::is('dialysis') || Request::is('dialysis/*')) {{'active'}} @endif" href="{{ url('/dialysis')}}"><i style="float: left" class="big procedures icon"></i>Dialysis</a>
-
-        <a class="item @if(Request::is('enquiry') || Request::is('enquiry/*')) {{'active'}} @endif" href="{{ url('/enquiry')}}"><i style="float: left" class="big address card icon"></i>Patient Enquiry</a>
     @endif
     <a class="item" href=".\logout"><i style="float: left" class="plug inverted big icon link"></i>Log Out</a>
 </div>
