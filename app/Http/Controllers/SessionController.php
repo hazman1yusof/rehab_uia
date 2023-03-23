@@ -19,14 +19,8 @@ class SessionController extends Controller
      */
     public function index()
     {   
-        if(url()->current() == "https://patientcare.test/login"){
-            $company = DB::table('sysdb.company')
+        $company = DB::table('sysdb.company')
                     ->get();
-        }else{
-            $company = DB::table('sysdb.company')
-                    ->where('compcode','13A')
-                    ->get();
-        }
 
         return view('login',compact('company'));
     }
