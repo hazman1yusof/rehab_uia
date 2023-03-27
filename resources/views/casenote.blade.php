@@ -97,138 +97,6 @@
         </div>
     </div>
 
-    <div class="panel panel-default" style="z-index: 100;position: relative;margin: 10px 0px 10px 0px" id="nursing_panel">
-        <div class="panel-heading clearfix collapsed" id="toggle_triage">
-
-            <b>NAME: <span id="name_show_triage"></span></b><br>
-            MRN: <span id="mrn_show_triage"></span>
-            SEX: <span id="sex_show_triage"></span>
-            DOB: <span id="dob_show_triage"></span>
-            AGE: <span id="age_show_triage"></span>
-            RACE: <span id="race_show_triage"></span>
-            RELIGION: <span id="religion_show_triage"></span><br>
-            OCCUPATION: <span id="occupation_show_triage"></span>
-            CITIZENSHIP: <span id="citizenship_show_triage"></span>
-            AREA: <span id="area_show_triage"></span> 
-
-            <i class="glyphicon glyphicon-chevron-up" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_triage"></i>
-            <i class="glyphicon glyphicon-chevron-down" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_triage" ></i >
-        
-            <div style="position: absolute;
-                            padding: 0 0 0 0;
-                            right: 0px;
-                            top: 0px;
-                            z-index: 1000;">
-                <button class="ui icon tertiary button refreshbtn_triage">
-                  <i class="sync alternate icon"></i>
-                </button>
-            </div> 
-
-            <div id='nursing_title' style="position: absolute;
-                            padding: 0 0 0 0;
-                            right: 50px;
-                            top: 48px;">
-                <h5><strong>Nursing</strong>&nbsp;&nbsp;
-                    <span class="metal"></span></h5>
-            </div> 
-
-            
-        </div>
-
-        <div id="tab_triage" class="panel-collapse collapse">
-            <div class="panel-body paneldiv">
-                @include('nursing')
-            </div>
-        </div>
-    </div>
-
-    <div class="panel panel-default" style="z-index: 100;position: relative;margin: 10px 0px 10px 0px" id="doctornote_panel">
-        <div class="panel-heading clearfix collapsed" id="toggle_doctornote">
-
-            <b>NAME: <span id="name_show_doctorNote"></span></b><br>
-            MRN: <span id="mrn_show_doctorNote"></span>
-            SEX: <span id="sex_show_doctorNote"></span>
-            DOB: <span id="dob_show_doctorNote"></span>
-            AGE: <span id="age_show_doctorNote"></span>
-            RACE: <span id="race_show_doctorNote"></span>
-            RELIGION: <span id="religion_show_doctorNote"></span><br>
-            OCCUPATION: <span id="occupation_show_doctorNote"></span>
-            CITIZENSHIP: <span id="citizenship_show_doctorNote"></span>
-            AREA: <span id="area_show_doctorNote"></span> 
-
-            <i class="glyphicon glyphicon-chevron-up" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_doctornote"></i>
-            <i class="glyphicon glyphicon-chevron-down" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_doctornote" ></i >
-        
-            <div style="position: absolute;
-                            padding: 0 0 0 0;
-                            right: 0px;
-                            top: 0px;
-                            z-index: 1000;">
-                <button class="ui icon tertiary button refreshbtn_doctornote">
-                  <i class="sync alternate icon"></i>
-                </button>
-            </div> 
-
-            <div id='doctornote_title' style="position: absolute;
-                            padding: 0 0 0 0;
-                            right: 50px;
-                            top: 48px;">
-                <h5><strong>Doctor Note</strong>&nbsp;&nbsp;
-                    <span class="metal"></span></h5>
-            </div> 
-
-            
-        </div>
-
-        <div id="tab_doctornote" class="panel-collapse collapse">
-            <div class="panel-body paneldiv" id="tab_doctornote_sticky">
-                @include('doctornote_div')
-            </div>
-        </div>
-    </div>
-
-    <div class="panel panel-default" style="z-index: 100;position: relative;margin: 10px 0px 10px 0px" id="diet_panel">
-        <div class="panel-heading clearfix collapsed" role="tab" id="toggle_diet">
-
-        <b>NAME: <span id="name_show_dieteticCareNotes"></span></b><br>
-        MRN: <span id="mrn_show_dieteticCareNotes"></span>
-        SEX: <span id="sex_show_dieteticCareNotes"></span>
-        DOB: <span id="dob_show_dieteticCareNotes"></span>
-        AGE: <span id="age_show_dieteticCareNotes"></span>
-        RACE: <span id="race_show_dieteticCareNotes"></span>
-        RELIGION: <span id="religion_show_dieteticCareNotes"></span><br>
-        OCCUPATION: <span id="occupation_show_dieteticCareNotes"></span>
-        CITIZENSHIP: <span id="citizenship_show_dieteticCareNotes"></span>
-        AREA: <span id="area_show_dieteticCareNotes"></span> 
-
-        <i class="glyphicon glyphicon-chevron-up" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_diet"></i>
-        <i class="glyphicon glyphicon-chevron-down" style="font-size:24px;margin: 0 0 0 12px" data-toggle="collapse" data-target="#tab_diet"></i>
-
-        <div style="position: absolute;
-                        padding: 0 0 0 0;
-                        right: 0px;
-                        top: 0px;
-                        z-index: 1000;">
-            <button class="ui icon tertiary button refreshbtn_diet">
-              <i class="sync alternate icon"></i>
-            </button>
-        </div> 
-        <div style="position: absolute;
-                        padding: 0 0 0 0;
-                        right: 50px;
-                        top: 48px;">
-            <h5><strong>Dietetic Care Notes</strong>&nbsp;&nbsp;
-                <span class="metal"></span></h5>
-        </div> 
-        </div>
-
-        <div id="tab_diet" class="panel-collapse collapse">
-            <div class="panel-body paneldiv">
-                @include('dieteticCareNotes')
-            </div>
-        </div>
-    </div>
-
     <div class="panel panel-default" style="z-index: 100;position: relative;margin: 10px 0px 10px 0px" id="phys_panel">
         <div class="panel-heading clearfix collapsed" role="tab" id="toggle_phys">
 
@@ -303,12 +171,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script type="text/ecmascript" src="{{ asset('assets/form-validator/jquery.form-validator.min.js') }}/"></script>
     <script type="text/javascript" src="{{ asset('js/userfile_casenote.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/transaction_casenote.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/transaction_diet.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/transaction_casenote.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="{{ asset('js/transaction_diet.js') }}"></script> -->
     <script type="text/javascript" src="{{ asset('js/transaction_phys.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/casenote.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/nursing_casenote.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/dieteticCareNotes.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/casenote.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="{{ asset('js/nursing_casenote.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="{{ asset('js/dieteticCareNotes.js') }}"></script> -->
     <script type="text/javascript" src="{{ asset('js/physioterapy.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/physioterapy_ncase.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/casenote_main.js') }}"></script>

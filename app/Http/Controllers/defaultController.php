@@ -14,7 +14,14 @@ class defaultController extends Controller{
     public function __construct(){
         
     }
-    
+
+    public function setuplanding(Request $request){
+        
+        $url = $request->url;
+        $centers = [];
+
+        return view('setup.setuplanding',compact('centers','url'));
+    }
 
     public function get_maiwp_center_dept(){
         $centers = DB::table('sysdb.department')

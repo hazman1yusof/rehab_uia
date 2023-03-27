@@ -144,22 +144,22 @@ $(document).ready(function () {
 				addmore_onadd = false;
 				addmore_onadd_phys = false;
 				addmore_onadd_diet = false;
-				refreshGrid("#jqGrid_trans", urlParam_trans);
-				refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
+				// refreshGrid("#jqGrid_trans", urlParam_trans);
+				// refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
 				refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
 				
-				empty_currDoctorNote();
-				empty_transaction();
-				empty_transaction_diet();
+				// empty_currDoctorNote();
+				// empty_transaction();
+				// empty_transaction_diet();
 				empty_transaction_phys();
-				empty_dietcarenote();
+				// empty_dietcarenote();
 				empty_userfile();
 				empty_currphys();
-				empty_formNursing();
+				// empty_formNursing();
 
-	            populate_currDoctorNote(selrowData('#jqGrid'));
-	            populate_triage_currpt(selrowData('#jqGrid'));
-	            populate_dieteticCareNotes_currpt(selrowData('#jqGrid'));
+	            // populate_currDoctorNote(selrowData('#jqGrid'));
+	            // populate_triage_currpt(selrowData('#jqGrid'));
+	            // populate_dieteticCareNotes_currpt(selrowData('#jqGrid'));
 	            populate_userfile(selrowData('#jqGrid'));
 	            populate_phys(selrowData('#jqGrid'));
 
@@ -183,17 +183,17 @@ $(document).ready(function () {
 			gridComplete: function () {
 				$('.jqgridsegment').removeClass('loading');
 				hide_tran_button(true);
-				hide_tran_button_diet(true);
+				// hide_tran_button_diet(true);
 				hide_tran_button_phys(true);
 				$('#no_of_pat').text($("#jqGrid").getGridParam("reccount"));
-				empty_currDoctorNote();
-				empty_transaction();
-				empty_transaction_diet();
+				// empty_currDoctorNote();
+				// empty_transaction();
+				// empty_transaction_diet();
 				empty_transaction_phys();
-				empty_dietcarenote();
+				// empty_dietcarenote();
 				empty_userfile();
 				empty_currphys();
-				empty_formNursing();
+				// empty_formNursing();
 
 				let discharge_btn_data = $('#discharge_btn').data('idno');
 				if(discharge_btn_data == undefined || discharge_btn_data == 'none'){
@@ -258,22 +258,22 @@ $(document).ready(function () {
 				addmore_onadd = false;
 				addmore_onadd_phys = false;
 				addmore_onadd_diet = false;
-				refreshGrid("#jqGrid_trans", urlParam_trans);
-				refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
+				// refreshGrid("#jqGrid_trans", urlParam_trans);
+				// refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
 				refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
 
-				empty_currDoctorNote();
-				empty_transaction();
-				empty_transaction_diet();
+				// empty_currDoctorNote();
+				// empty_transaction();
+				// empty_transaction_diet();
 				empty_transaction_phys();
-				empty_dietcarenote();
+				// empty_dietcarenote();
 				empty_userfile();
 				empty_currphys();
-				empty_formNursing();
+				// empty_formNursing();
 
-	            populate_currDoctorNote(selrowData('#jqGrid'));
-	            populate_triage_currpt(selrowData('#jqGrid'));
-	            populate_dieteticCareNotes_currpt(selrowData('#jqGrid'));
+	            // populate_currDoctorNote(selrowData('#jqGrid'));
+	            // populate_triage_currpt(selrowData('#jqGrid'));
+	            // populate_dieteticCareNotes_currpt(selrowData('#jqGrid'));
 	            populate_userfile(selrowData('#jqGrid'));
 	            populate_phys(selrowData('#jqGrid'));
 
@@ -290,18 +290,18 @@ $(document).ready(function () {
 			},
 			gridComplete: function () {
 				$('.jqgridsegment').removeClass('loading');
-				hide_tran_button(true);
-				hide_tran_button_diet(true);
+				// hide_tran_button(true);
+				// hide_tran_button_diet(true);
 				hide_tran_button_phys(true);
 				$('#no_of_pat').text($("#jqGrid").getGridParam("reccount"));
-				empty_currDoctorNote();
-				empty_transaction();
-				empty_transaction_diet();
+				// empty_currDoctorNote();
+				// empty_transaction();
+				// empty_transaction_diet();
 				empty_transaction_phys();
-				empty_dietcarenote();
+				// empty_dietcarenote();
 				empty_userfile();
 				empty_currphys();
-				empty_formNursing();
+				// empty_formNursing();
 
 				let discharge_btn_data = $('#discharge_btn').data('idno');
 				if(discharge_btn_data == undefined || discharge_btn_data == 'none'){

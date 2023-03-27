@@ -45,4 +45,12 @@ $(document).ready(function() {
         $('a#showSidebar').hide();
     }
 
+    $('#setting_show').click(function(){
+        if($('#setting_menu').is(":visible")){
+            $('#setting_menu').hide();
+        }else{
+            $('#setting_menu').show();
+        }
+    });
+
 });
