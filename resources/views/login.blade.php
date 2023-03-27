@@ -9,7 +9,7 @@
 				{{ csrf_field() }}
 				<div class="ui raised segment" style="background: rgb(121 205 255 / 50%); padding: 20px 40px;">
 					<div class="ui medium rounded image">
-					  <img src="{{ asset('img/MSLogo1.jpg') }}" style="margin: auto;">
+					  <img src="{{ asset('img/imsc_logo.png') }}" style="margin: auto;">
 					</div>
 					<div class="field" style="text-align: center;font-size: medium;letter-spacing: .8px;">
 						<label>Log In</label>
