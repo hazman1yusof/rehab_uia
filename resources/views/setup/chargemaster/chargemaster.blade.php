@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts2.main')
 
 @section('title', 'Charge Master Setup')
 

@@ -30,6 +30,17 @@ Route::post('/user_maintenance/form', "UserMaintenanceController@form");
 Route::get('/user_maintenance/{id}', "UserMaintenanceController@chg_password");
 Route::post('/user_maintenance/{id}', "UserMaintenanceController@chg_password_save");
 
+
+//// menu mainatenance page ///
+Route::get('/menu_maintenance','setup\MenuMaintenanceController@show');
+Route::get('/menu_maintenance/table','setup\MenuMaintenanceController@table');
+Route::post('/menu_maintenance/form','setup\MenuMaintenanceController@form');
+
+//// group mainatenance page ///
+Route::get('/group_maintenance','setup\GroupMaintenanceController@show');
+Route::get('/group_maintenance/table','setup\GroupMaintenanceController@table');
+Route::post('/group_maintenance/form','setup\GroupMaintenanceController@form');
+
 Route::get('/pivot', "PivotController@show");
 
 Route::get('/pivot_get', "PivotController@get_json_pivot");

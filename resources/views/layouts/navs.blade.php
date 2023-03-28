@@ -33,34 +33,43 @@
 
     <a class="item {{(Request::is('doctornote') ? 'active' : '')}}" href="{{ url('/casenote')}}"><i style="float: left" class="stethoscope inverted big icon link"></i>Case Note</a>
   
-    <a class="item" id="setting_show">
-        <i style="float: left" class="cogs inverted big icon link"></i>Settings
+    <a class="item" id="file_show">
+        <i style="float: left" class="cogs inverted big icon link"></i>File Setup
     </a>
 
-    <div class="menu" style="display:none;" id="setting_menu">
-        <a class="item" href="{{ url('/setuplanding?url=salutation')}}" style="padding: 15px 20px 15px 100px !important;">Salutation</a>
+    <div class="menu" style="display:none;" id="file_menu">
+        <a class="item inneritem" href="{{ url('/setuplanding?url=salutation')}}" >Salutation</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=race')}}" >Race</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=language')}}" >Language</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=marital')}}" >Marital</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=relationship')}}" >Relationship</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=religion')}}" >Religion</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=occupation')}}" >Occupation</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=bloodGroup')}}" >Blood Group</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=area')}}" >Area</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=state')}}" >State</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=postcode')}}" >Post Code</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=country')}}" >Country</a>
+    </div>
 
-        <a class="item" href="{{ url('/setuplanding?url=race')}}" style="padding: 15px 20px 15px 100px !important;">Race</a>
+    <a class="item" id="security_show">
+        <i style="float: left" class="user inverted shield big icon link"></i>Security Setup
+    </a>
 
-        <a class="item" href="{{ url('/setuplanding?url=language')}}" style="padding: 15px 20px 15px 100px !important;">Language</a>
+    <div class="menu" style="display:none;" id="security_menu">
+        <a class="item inneritem" href="{{ url('user_maintenance/')}}" >User Maintenance</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=group_maintenance')}}" >Group Maintenance</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=menu_maintenance')}}" >Menu Maintenance</a>
+    </div>
 
-        <a class="item" href="{{ url('/setuplanding?url=marital')}}" style="padding: 15px 20px 15px 100px !important;">Marital</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=relationship')}}" style="padding: 15px 20px 15px 100px !important;">Relationship</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=religion')}}" style="padding: 15px 20px 15px 100px !important;">Religion</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=occupation')}}" style="padding: 15px 20px 15px 100px !important;">Occupation</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=bloodGroup')}}" style="padding: 15px 20px 15px 100px !important;">Blood Group</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=area')}}" style="padding: 15px 20px 15px 100px !important;">Area</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=state')}}" style="padding: 15px 20px 15px 100px !important;">State</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=postcode')}}" style="padding: 15px 20px 15px 100px !important;">Post Code</a>
-
-        <a class="item" href="{{ url('/setuplanding?url=country')}}" style="padding: 15px 20px 15px 100px !important;">Country</a>
+    <a class="item" id="charges_show">
+        <i style="float: left" class="wrench alternate big icon link"></i>Charges Setup
+    </a>
+    <div class="menu" style="display:none;" id="charges_menu">
+        <a class="item inneritem" href="{{ url('/setuplanding?url=chargemaster')}}" style="">Charge Master</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=chargeclass')}}" >Charge Class</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=chargetype')}}" >Charge Type</a>
+        <a class="item inneritem" href="{{ url('/setuplanding?url=chargegroup')}}" >Charge Group</a>
     </div>
 
 

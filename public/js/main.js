@@ -45,11 +45,27 @@ $(document).ready(function() {
         $('a#showSidebar').hide();
     }
 
-    $('#setting_show').click(function(){
-        if($('#setting_menu').is(":visible")){
-            $('#setting_menu').hide();
+    $('#file_show').click(function(){
+        if($('#file_menu').is(":visible")){
+            $('#file_menu').hide();
         }else{
-            $('#setting_menu').show();
+            $('#file_menu').show();
+        }
+    });
+
+    $('#security_show').click(function(){
+        if($('#security_menu').is(":visible")){
+            $('#security_menu').hide();
+        }else{
+            $('#security_menu').show();
+        }
+    });
+
+    $('#charges_show').click(function(){
+        if($('#charges_menu').is(":visible")){
+            $('#charges_menu').hide();
+        }else{
+            $('#charges_menu').show();
         }
     });
 
