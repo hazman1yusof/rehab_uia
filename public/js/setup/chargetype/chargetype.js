@@ -152,9 +152,11 @@ $(document).ready(function () {
 			{ label: 'ipdept', name: 'ipdept', hidden:true},
 			{ label: 'opdept', name: 'opdept', hidden:true},
 			{ label: 'invcategory', name: 'invcategory', hidden:true},
-			{ label: 'Status', name:'recstatus', width:20, classes:'wrap', hidden:false,
-			cellattr: function (rowid, cellvalue)
-			{ return cellvalue == 'DEACTIVE' ? 'class="alert alert-danger"' : '' },},
+			{ label: 'Record Status', name: 'recstatus', width: 30, classes: 'wrap', editable: true, edittype:"select",formatter:'select', 
+				editoptions:{
+					value:"ACTIVE:ACTIVE;DEACTIVE:DEACTIVE"
+				}
+			},
 			{ label: 'computerid', name: 'computerid', width: 90, hidden: true, classes: 'wrap' },
 			{ label: 'ipaddress', name: 'ipaddress', width: 90, hidden: true, classes: 'wrap' },
 			{ label: 'lastcomputerid', name: 'lastcomputerid', width: 90, hidden: true, classes: 'wrap' },
