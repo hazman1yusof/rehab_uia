@@ -49,7 +49,7 @@ class SessionController extends Controller
             //     return back()->withErrors(['Sorry, your account is inactive, contact admin to activate it again']);
             // }
             
-            if ($request->password == $user->first()->password) {
+            // if ($request->password == $user->first()->password) {
                 Auth::login($user->first(),$remember);
                 if(Auth::user()->groupid == 'patient'){
                     return redirect('/preview');
@@ -76,9 +76,9 @@ class SessionController extends Controller
                 }else{
                     return redirect('/casenote');
                 }
-            }else{
-                return back()->withErrors(['Try again, Password entered incorrect']);
-            }
+            // }else{
+            //     return back()->withErrors(['Try again, Password entered incorrect']);
+            // }
         }else{
             return back()->withErrors(['Try again, Username or Password incorrect']);
         }
