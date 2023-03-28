@@ -780,9 +780,21 @@ class WebserviceController extends Controller
 
         DB::beginTransaction();
         try {
-
             $add_array = $_REQUEST;
-            dd($add_array);
+            $patm=[];
+            $epis=[];
+            
+            foreach ($add_array as $key => $value) {
+                if(str_starts_with($value, 'patm_')){
+                    array_push($patm,substr($value,5));
+                }else if(str_starts_with($value, 'epis_')){
+                    array_push($epis,substr($value,5));
+                }
+            }
+
+            dump($patm);
+
+            dd($epis);
 
             DB::commit();
         } catch (\Exception $e) {
