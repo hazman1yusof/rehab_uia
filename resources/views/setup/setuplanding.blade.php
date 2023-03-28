@@ -6,7 +6,6 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
         <title>Settings</title>
-
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
         @yield('stylesheet')
 

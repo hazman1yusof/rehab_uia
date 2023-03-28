@@ -271,8 +271,19 @@
 
 	<script type="text/javascript">
         $( document ).ready(function() {
-            $(".preloader").fadeOut();
+          $(".preloader").fadeOut();
+
+        	$('body').click(function(){
+        		parent_close_disabled(true);
+        	});
         });
+        
+				function parent_close_disabled(isClose){
+					if (window.frameElement) {
+						parent.disableCloseButton(isClose);
+					}
+				}
+
     </script>
 
 	@yield('js')

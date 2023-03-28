@@ -8,8 +8,6 @@ $(document).ready(function() {
         $('.ui.sidebar').sidebar('toggle');
     });
 
-    $('.ui.sidebar').onHide
-
     $('.ui.dropdown').dropdown()
 
     $('.ui.left.fixed.vertical.icon.menu a').popup({position:'right center'});
@@ -70,3 +68,9 @@ $(document).ready(function() {
     });
 
 });
+
+function disableCloseButton(){
+    if($('div#mysidebar').hasClass('visible')){
+        $('.ui.sidebar').sidebar('toggle');
+    }
+}

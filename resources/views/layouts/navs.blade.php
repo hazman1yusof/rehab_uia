@@ -28,7 +28,7 @@
 </div>
 
 
-<div class="ui sidebar inverted vertical menu sidemenu">
+<div class="ui sidebar inverted vertical menu sidemenu" id="mysidebar">
     <a class="item {{(Request::is('mainlanding') ? 'active' : '')}}" href="{{url('/mainlanding')}}"><i style="float: left" class="users inverted icon big link"></i>Patient List</a>
 
     <a class="item {{(Request::is('doctornote') ? 'active' : '')}}" href="{{ url('/casenote')}}"><i style="float: left" class="stethoscope inverted big icon link"></i>Case Note</a>
