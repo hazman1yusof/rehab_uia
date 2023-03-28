@@ -33,6 +33,7 @@
 
     <a class="item {{(Request::is('doctornote') ? 'active' : '')}}" href="{{ url('/casenote')}}"><i style="float: left" class="stethoscope inverted big icon link"></i>Case Note</a>
   
+    @if (strtoupper(Auth::user()->groupid) == 'ADMIN')
     <a class="item" id="file_show">
         <i style="float: left" class="cogs inverted big icon link"></i>File Setup
     </a>
@@ -71,7 +72,7 @@
         <a class="item inneritem" href="{{ url('/setuplanding?url=chargetype')}}" >Charge Type</a>
         <a class="item inneritem" href="{{ url('/setuplanding?url=chargegroup')}}" >Charge Group</a>
     </div>
-
+    @endif
 
     <a class="item" href=".\logout"><i style="float: left" class="plug inverted big icon link"></i>Log Out</a>
 </div>
