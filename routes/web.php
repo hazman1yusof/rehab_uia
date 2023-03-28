@@ -67,6 +67,7 @@ Route::get('/prescription/{id}', "PrescriptionController@detail");
 Route::get('/preview','PreviewController@preview');
 Route::get('/preview/data','PreviewController@previewdata');
 Route::get('/localpreview','WebserviceController@localpreview');
+Route::get('/save_pt','WebserviceController@save_pt');
 
 Route::get('/previewvideo/{id}','PreviewController@previewvideo');
 
@@ -96,7 +97,7 @@ Route::get('/webservice/patmast','WebserviceController@patmast');
 Route::get('/webservice/episode','WebserviceController@episode');
 Route::get('/webservice/ticket','WebserviceController@ticket');
 Route::get('/webservice/login','WebserviceController@login');
-Route::get('/webservice/auto_episode','WebserviceController@auto_episode');
+// Route::get('/webservice/auto_episode','WebserviceController@auto_episode');
 
 //util dr msoftweb
 Route::get('/util/get_value_default','defaultController@get_value_default')->name('util_val');
@@ -104,7 +105,7 @@ Route::get('/util/get_table_default','defaultController@get_table_default')->nam
 
 //pivot
 Route::get('/dashboard','eisController@dashboard')->name('dashboard');
-Route::get('/store_dashb','WebserviceController@store_dashb');
+// Route::get('/store_dashb','WebserviceController@store_dashb');
 Route::get('/eis','eisController@show')->name('eis');
 Route::get('/reveis','eisController@reveis')->name('reveis');
 Route::get('/pivot_get', "eisController@table");
