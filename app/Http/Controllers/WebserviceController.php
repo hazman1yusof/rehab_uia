@@ -800,7 +800,14 @@ class WebserviceController extends Controller
 
             foreach ($patm_field as $key => $value) {
                 if(!empty($patm[$key])){
-                    $patm_array[$value] = $patm[$key];
+                    switch ($value) {
+                        case 'AddDate':
+                            $patm_array[$value] = Carbon::createFromFormat('d/m/Y',$patm[$key])->format('Y-m-d');
+                            break;
+                        default:
+                            $patm_array[$value] = $patm[$key];
+                            break;
+                    }
                 }
             }
 
