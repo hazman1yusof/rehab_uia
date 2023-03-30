@@ -134,6 +134,8 @@
         $( document ).ready(function() {
             $(".preloader").fadeOut();
         });
+
+        @yield('script')
     </script>  
     
     @yield('js')
