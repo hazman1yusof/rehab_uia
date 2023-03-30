@@ -840,8 +840,8 @@ class WebserviceController extends Controller
             
 
             DB::commit();
-
-            return view('save_pt');
+            echo "<script>window.close();</script>";
+            // return view('save_pt');
         } catch (\Exception $e) {
             DB::rollback();
 
