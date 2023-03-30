@@ -799,7 +799,9 @@ class WebserviceController extends Controller
             }
 
             foreach ($patm_field as $key => $value) {
-                $patm_array[$value] = $patm[$key];
+                if(!empty($patm[$key])){
+                    $patm_array[$value] = $patm[$key];
+                }
             }
 
             foreach ($epis_field as $key => $value) {
