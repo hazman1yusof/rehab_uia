@@ -855,7 +855,6 @@ class WebserviceController extends Controller
                         case 'reg_date':
                         case 'dischargedate':
                         case 'lastupdate':
-                        dump(Carbon::createFromFormat('d/m/Y',$epis[$key])->format('Y-m-d'));
                             $epis_array[$value] = Carbon::createFromFormat('d/m/Y',$epis[$key])->format('Y-m-d');
                             break;
                         default:
