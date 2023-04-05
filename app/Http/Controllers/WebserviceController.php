@@ -831,7 +831,7 @@ class WebserviceController extends Controller
     }
 
     public function save_epis(Request $request){
-        // http://211.25.218.245:8080/rehab/save_epis?epis_compcode=&epis_mrn=&epis_episno=&epis_admsrccode=&epis_epistycode=&epis_case_code=&epis_ward=&epis_bedtype=&epis_room=&epis_bed=&epis_admdoctor=&epis_attndoctor=&epis_refdoctor=&epis_prescribedays=&epis_pay_type=&epis_pyrmode=&epis_climitauthid=&epis_crnumber=&epis_depositreq=&epis_deposit=&epis_pkgcode=&epis_billtype=&epis_remarks=&epis_episstatus=&epis_episactive=&epis_adddate=&epis_adduser=&epis_reg_date=&epis_reg_time=&epis_dischargedate=&epis_dischargeuser=&epis_dischargetime=&epis_dischargedest=&epis_allocdoc=&epis_allocbed=&epis_allocnok=&epis_allocpayer=&epis_allocicd=&epis_lastupdate=&epis_lastuser=&epis_lasttime=&epis_procedure=&epis_dischargediag=&epis_lodgerno=&epis_regdept=&epis_diet1=&epis_diet2=&epis_diet3=&epis_diet4=&epis_diet5=&epis_glauthid=&epis_treatment=&epis_diagcode=&epis_complain=&epis_diagfinal=&epis_clinicalnote=&epis_conversion=&epis_newcaseP=&epis_newcaseNP=&epis_followupP=&epis_followupNP=&epis_bed2=&epis_bed3=&epis_bed4=&epis_bed5=&epis_bed6=&epis_bed7=&epis_bed8=&epis_bed9=&epis_bed10=&epis_diagprov=&epis_visitcase=&epis_PkgAutoNo=&epis_AgreementID=&epis_AdminFees=&epis_EDDept=&epis_dischargestatus=&epis_procode=&epis_treatcode=&epis_payer=&epis_doctorstatus=&epis_reff_rehab=&epis_reff_physio=&epis_reff_diet=&epis_stats_rehab=&epis_stats_physio=&epis_stats_diet=&epis_dry_weight=&epis_duration_hd=&epis_lastarrivaldate=&epis_lastarrivaltime=&epis_lastarrivalno=&epis_picdoctor=&epis_nurse_stat=
+        // http://rehab_uia.test:8080/save_epis?epis_compcode=&epis_mrn=&epis_episno=&epis_admsrccode=&epis_epistycode=&epis_case_code=&epis_ward=&epis_bedtype=&epis_room=&epis_bed=&epis_admdoctor=&epis_attndoctor=&epis_refdoctor=&epis_prescribedays=&epis_pay_type=&epis_pyrmode=&epis_climitauthid=&epis_crnumber=&epis_depositreq=&epis_deposit=&epis_pkgcode=&epis_billtype=&epis_remarks=&epis_episstatus=&epis_episactive=&epis_adddate=&epis_adduser=&epis_reg_date=&epis_reg_time=&epis_dischargedate=&epis_dischargeuser=&epis_dischargetime=&epis_dischargedest=&epis_allocdoc=&epis_allocbed=&epis_allocnok=&epis_allocpayer=&epis_allocicd=&epis_lastupdate=&epis_lastuser=&epis_lasttime=&epis_procedure=&epis_dischargediag=&epis_lodgerno=&epis_regdept=&epis_diet1=&epis_diet2=&epis_diet3=&epis_diet4=&epis_diet5=&epis_glauthid=&epis_treatment=&epis_diagcode=&epis_complain=&epis_diagfinal=&epis_clinicalnote=&epis_conversion=&epis_newcaseP=&epis_newcaseNP=&epis_followupP=&epis_followupNP=&epis_bed2=&epis_bed3=&epis_bed4=&epis_bed5=&epis_bed6=&epis_bed7=&epis_bed8=&epis_bed9=&epis_bed10=&epis_diagprov=&epis_visitcase=&epis_PkgAutoNo=&epis_AgreementID=&epis_AdminFees=&epis_EDDept=&epis_dischargestatus=&epis_procode=&epis_treatcode=&epis_payer=&epis_doctorstatus=&epis_reff_rehab=&epis_reff_physio=&epis_reff_diet=&epis_stats_rehab=&epis_stats_physio=&epis_stats_diet=&epis_dry_weight=&epis_duration_hd=&epis_lastarrivaldate=&epis_lastarrivaltime=&epis_lastarrivalno=&epis_picdoctor=&epis_nurse_stat=
 
 
         DB::beginTransaction();
@@ -855,10 +855,10 @@ class WebserviceController extends Controller
                         case 'reg_date':
                         case 'dischargedate':
                         case 'lastupdate':
-                            $patm_array[$value] = Carbon::createFromFormat('d/m/Y',$epis[$key])->format('Y-m-d');
+                            $epis_array[$value] = Carbon::createFromFormat('d/m/Y',$epis[$key])->format('Y-m-d');
                             break;
                         default:
-                            $patm_array[$value] = $patm[$key];
+                            $epis_array[$value] = $epis[$key];
                             break;
                     }
                 }
