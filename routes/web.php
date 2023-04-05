@@ -67,7 +67,8 @@ Route::get('/prescription/{id}', "PrescriptionController@detail");
 Route::get('/preview','PreviewController@preview');
 Route::get('/preview/data','PreviewController@previewdata');
 Route::get('/localpreview','WebserviceController@localpreview');
-Route::get('/save_pt','WebserviceController@save_pt');
+Route::get('/save_patmast','WebserviceController@save_patmast');
+Route::get('/save_epis','WebserviceController@save_epis');
 
 Route::get('/previewvideo/{id}','PreviewController@previewvideo');
 
