@@ -849,7 +849,19 @@ class WebserviceController extends Controller
             }
 
             foreach ($epis_field as $key => $value) {
-                $epis_array[$value] = $epis[$key];
+                if(!empty($epis[$key])){
+                    switch ($value) {
+                        case 'adddate':
+                        case 'reg_date':
+                        case 'dischargedate':
+                        case 'lastupdate':
+                            $patm_array[$value] = Carbon::createFromFormat('d/m/Y',$epis[$key])->format('Y-m-d');
+                            break;
+                        default:
+                            $patm_array[$value] = $patm[$key];
+                            break;
+                    }
+                }
             }
 
             if(!$this->check_duplicate_epis($epis_array)){
