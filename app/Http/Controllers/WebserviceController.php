@@ -17,6 +17,10 @@ class WebserviceController extends Controller
     {
 
     }
+
+    public function setup_computerid(Request $request){
+        return view('computerid');
+    }
     
     public function localpreview(Request $request)
     {   
@@ -827,16 +831,16 @@ class WebserviceController extends Controller
             }
            
 
-            // if(!$this->check_duplicate_epis($epis_array)){
-            //     DB::table('hisdb.episode')
-            //         ->insert($epis_array);
-            // }else{
-            //     DB::table('hisdb.episode')
-            //         ->where('compcode',$epis_array['compcode'])
-            //         ->where('mrn',$epis_array['mrn'])
-            //         ->where('episno',$epis_array['episno'])
-            //         ->update($epis_array);
-            // }
+            if(!$this->check_duplicate_epis($epis_array)){
+                DB::table('hisdb.episode')
+                    ->insert($epis_array);
+            }else{
+                DB::table('hisdb.episode')
+                    ->where('compcode',$epis_array['compcode'])
+                    ->where('mrn',$epis_array['mrn'])
+                    ->where('episno',$epis_array['episno'])
+                    ->update($epis_array);
+            }
             
 
             DB::commit();
@@ -850,6 +854,10 @@ class WebserviceController extends Controller
     }
 
     function check_duplicate_patm($array){
+        if(empty($array['CompCode']) || empty($array['MRN'])){
+            return false;
+        }
+
         $pat_mast = DB::table('hisdb.pat_mast')
                         ->where('CompCode',$array['CompCode'])
                         ->where('MRN',$array['MRN']);
@@ -858,13 +866,16 @@ class WebserviceController extends Controller
     }
 
     function check_duplicate_epis($array){
+        if(empty($array['compcode']) || empty($array['mrn']) || empty($array['episno'])){
+            return false;
+        }
+
         $episode = DB::table('hisdb.episode')
                         ->where('compcode',$array['compcode'])
                         ->where('mrn',$array['mrn'])
                         ->where('episno',$array['episno']);
 
         return $episode->exists();
-        
     }
 
     

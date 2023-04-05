@@ -15,4 +15,12 @@ $(document).ready(function() {
   $('#compcode').dropdown({
     clearable: true
   })
+
+  if(!computerid){
+    $('#nocomid').show();
+  }else{
+    $('#computerid').val(computerid);
+    $('#nocomid').hide();
+  }
 });
+var computerid = localStorage.getItem('computerid');

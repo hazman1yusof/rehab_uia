@@ -61,6 +61,7 @@
         <a class="item inneritem" href="{{ url('user_maintenance/')}}" >User Maintenance</a>
         <a class="item inneritem" href="{{ url('/setuplanding?url=group_maintenance')}}" >Group Maintenance</a>
         <a class="item inneritem" href="{{ url('/setuplanding?url=menu_maintenance')}}" >Menu Maintenance</a>
+        <a class="item inneritem" href="{{ url('setup_computerid')}}" >Setup Computer ID</a>
     </div>
 
     <a class="item" id="charges_show">

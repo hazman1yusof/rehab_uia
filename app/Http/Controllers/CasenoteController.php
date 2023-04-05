@@ -109,6 +109,7 @@ class CasenoteController extends defaultController
                         $join = $join->where(
                                 function($query){
                                     return $query
+                                            ->where('episode.regdept','rehab')
                                             ->whereNull('episode.episstatus')
                                             ->orWhere('episode.episstatus','!=','C');
                                 }

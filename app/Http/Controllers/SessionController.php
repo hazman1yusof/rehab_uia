@@ -33,6 +33,10 @@ class SessionController extends Controller
                     ->where('password',request('password'))
                     ->where('compcode',request('compcode'));
 
+        if(empty($request->computerid) &&  $user->first()->groupid != 'ADMIN'){
+            return back();
+        }
+
         if($user->exists()){
 
             $department = DB::table('sysdb.department')

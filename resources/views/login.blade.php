@@ -7,6 +7,7 @@
 		<div class="column" style="max-width: 350px;">
 			<form class="ui form" method="POST" autocomplete="off">
 				{{ csrf_field() }}
+				<input type="hidden" id="computerid" name="computerid">
 				<div class="ui raised segment" style="background: rgb(121 205 255 / 50%); padding: 20px 40px;">
 					<div class="ui medium rounded image">
 					  <img src="{{ asset('img/imsc_logo.png') }}" style="margin: auto;">
@@ -16,12 +17,12 @@
 					</div>
 					<div class="field">
 						<!-- <label>Username</label> -->
-						<input placeholder="Username" type="text" name="username" autocomplete="off">
+						<input placeholder="Username" type="text" name="username" autocomplete="off" required>
 					</div>
 					<div class="field">
 						<!-- <label>Password</label> -->
 						<div class="ui icon input">
-						  <input placeholder="Password" type="password" name="password" id="inputPassword" autocomplete="off">
+						  <input placeholder="Password" type="password" name="password" id="inputPassword" autocomplete="off" required>
 						  <i id="showpwd" class="eye link icon"></i>
 						</div>
 					</div>
@@ -39,8 +40,11 @@
 							<label>Remember me</label>
 						</div>
 					</div> -->
-				<button class="ui fluid basic button" type="submit" style="margin-top: 10px; background: rgb(255 255 255);"><b>Log In</b></button>
+				<button id="submitbtn" class="ui fluid basic button" type="submit" style="margin-top: 10px; background: rgb(255 255 255);"><b>Log In</b></button>
 				</div>
+				<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='./setup_computerid' id="nocomid" style="color:red; background:lightblue;">Please Set Computer ID in Chrome Browser</a> -->
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span href='./setup_computerid' id="nocomid" style="color:red; background:lightblue;">Please Set Computer ID in Chrome Browser</span>
 
 				
 			</form>

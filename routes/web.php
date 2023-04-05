@@ -29,7 +29,7 @@ Route::post('/user_maintenance/form', "UserMaintenanceController@form");
 
 Route::get('/user_maintenance/{id}', "UserMaintenanceController@chg_password");
 Route::post('/user_maintenance/{id}', "UserMaintenanceController@chg_password_save");
-
+Route::get('/setup_computerid','UserMaintenanceController@setup_computerid');
 
 //// menu mainatenance page ///
 Route::get('/menu_maintenance','setup\MenuMaintenanceController@show');
