@@ -10,7 +10,7 @@ $(document).ready(function () {
 	// var fdl = new faster_detail_load();
 	$("#jqGrid_trans_phys").jqGrid({
 		datatype: "local",
-		editurl: "./doctornote_transaction_save",
+		editurl: "./casenote_transaction_save",
 		colModel: [
 			{ label: 'id', name: 'id', hidden: true,key:true },
 			{ label: 'chg_code', name: 'chg_code', hidden: true },
@@ -109,7 +109,7 @@ $(document).ready(function () {
         	let selrow = selrowData('#jqGrid');
         	let selrow_trans = selrowData('#jqGrid_trans_phys');
 
-			let editurl = "./doctornote_transaction_save?"+
+			let editurl = "./casenote_transaction_save?"+
 				$.param({
 					mrn: selrow.MRN,
 		    		episno: selrow.Episno,
@@ -156,7 +156,7 @@ $(document).ready(function () {
         	let selrow = selrowData('#jqGrid');
         	let selrow_trans = selrowData('#jqGrid_trans_phys');
 
-			let editurl = "./doctornote_transaction_save?"+
+			let editurl = "./casenote_transaction_save?"+
 				$.param({
 					mrn: selrow.MRN,
 		    		episno: selrow.Episno,
@@ -210,7 +210,7 @@ $(document).ready(function () {
 						    		oper: 'del'
 								}
 
-								$.post( "./doctornote_transaction_save",param, function( data ){
+								$.post( "./casenote_transaction_save",param, function( data ){
 									addmore_onadd_phys = false;
 									refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
 								},'json');
@@ -286,7 +286,7 @@ $(document).ready(function () {
 
 var addmore_onadd_phys = false;
 var urlParam_trans_phys = {
-	url:'./doctornote/table',
+	url:'./casenote/table',
 	isudept:'phys',
 	action: 'get_transaction_table',
 }
@@ -313,6 +313,132 @@ function onTab(event){
     }
 }
 
+function pop_item_select(type,id,rowid,ontab=false){ 
+    var act = null;
+    var id = id;
+    var rowid = rowid;
+    var selecter = null;
+    var title="Item selector";
+    var mdl = null;
+    var text_val = $('input#'+id).val();
+        
+    act = get_url(type);
+
+	$('#mdl_item_selector').modal({
+		'closable':false,
+		onHidden : function(){
+        	switch(id){
+	        	case rowid+'_chg_desc':
+    	        	delay(function(){
+    					$('#jqGrid_trans input#'+rowid+'_quantity').select().focus();
+    				}, 10 );
+	        		break;
+	        	case rowid+'_dos_desc':
+    	        	delay(function(){
+    					$('#jqGrid_trans input#'+rowid+'_fre_desc').select().focus();
+    				}, 10 );
+	        		break;
+	        	case rowid+'_fre_desc':
+    	        	delay(function(){
+    					$('#jqGrid_trans input#'+rowid+'_ins_desc').select().focus();
+    				}, 10 );
+	        		break;
+	        	case rowid+'_ins_desc':
+    	        	delay(function(){
+    					$('#jqGrid_trans input#'+rowid+'_dru_desc').select().focus();
+    				}, 10 );
+	        		break;
+	        	case rowid+'_dru_desc':
+	        		break;
+	        }
+	        $('#tbl_item_select').html('');
+	        selecter.destroy();
+	    },
+	}).modal('show');
+	$('body,#mdl_item_selector').addClass('scrolling');
+    
+    selecter = $('#tbl_item_select').DataTable( {
+            "ajax": "./doctornote/table?action=" + act,
+            "ordering": false,
+            "lengthChange": false,
+            "info": true,
+            "pagingType" : "numbers",
+            "search": {
+                        "smart": true,
+                        "search": text_val
+                      },
+            "columns": [
+                        {'data': 'code'}, 
+                        {'data': 'description'},
+                       ],
+
+            "columnDefs": [ {
+            	"width": "20%",
+                "targets": 0,
+                "data": "code",
+                "render": function ( data, type, row, meta ) {
+                    return data;
+                }
+              } ],
+
+            "initComplete": function(oSettings, json) {
+		        delay(function(){
+                	$('div.dataTables_filter input', selecter.table().container()).get(0).focus();
+	        	}, 10 );
+            },
+    });
+
+
+    
+    // dbl click will return the description in text box and code into hidden input, dialog will be closed automatically
+    $('#tbl_item_select tbody').on('click', 'tr', function () {
+        // $('#txt_' + type).removeClass('error myerror').addClass('valid');
+        // setTimeout(function(type){
+        //     $('#txt_' + type).removeClass('error myerror').addClass('valid'); 
+        // }, 1000,type);
+        
+        // $('#hid_' + type).val(item["code"]);
+        // $('#txt_' + type).val(item["description"]);
+        item = selecter.row( this ).data();
+        $('input[name='+type+'][optid='+rowid+']').val(item["code"]);
+        $('input[name='+type+'][optid='+rowid+']').parent().next().html(item["description"])
+        // $("#jqGrid_trans").jqGrid('setRowData', rowid ,{m_description:item["description"]});
+            
+        $('#mdl_item_selector').modal('hide');
+    });
+        
+    // $("#mdl_item_selector").on('hidden.bs.modal', function () {
+    //     $('#tbl_item_select').html('');
+    //     selecter.destroy();
+        
+    //     type = "";
+    //     item = "";
+    //     // obj.blurring = true;
+    // });
+}
+
+function get_url(type){
+    let act = null;
+    switch (type){
+        case "chgcode":
+            act = "get_chgcode";
+            break;
+        case "drugindcode":
+            act = "get_drugindcode";
+            break;
+        case "freqcode":
+            act = "get_freqcode";
+            break;
+        case "dosecode":
+            act = "get_dosecode";
+            break;
+        case "inscode":
+            act = "get_inscode";
+            break;
+    }
+    return act;
+}
+
 function get_trans_tbl_data(){
 	var data = $('#jqGrid_trans_phys').jqGrid('getRowData');
 
@@ -326,5 +452,5 @@ function get_trans_tbl_data(){
 function empty_transaction_phys(kosongkan = 'kosongkan'){
 	addmore_onadd_phys = false
 	hide_tran_button_phys(true);
-	refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys,kosongkan);
+	refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys,'kosongkan');
 }

@@ -167,7 +167,7 @@ class CasenoteController extends defaultController
                             ->where('trx.compcode','=',session('compcode'));
 
         if($request->isudept != 'CLINIC'){
-            $table_chgtrx->where('trx.isudept','=',$request->isudept);
+            $table_chgtrx->where('trx.issdept','=',$request->isudept);
         }
 
         $table_chgtrx = $table_chgtrx
@@ -262,7 +262,7 @@ class CasenoteController extends defaultController
                     'remarks' => $request->remarks,
                     'billflag' => '0',
                     'quantity' => $request->quantity,
-                    'isudept' => $request->isudept,
+                    'issdept' => $request->isudept,
                     'trxtime' => Carbon::now("Asia/Kuala_Lumpur"),
                     'lastuser' => Auth::user()->username,
                     'lastupdate' => Carbon::now("Asia/Kuala_Lumpur")

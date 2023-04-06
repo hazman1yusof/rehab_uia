@@ -3,7 +3,7 @@
     padding: 30px !important; ">
 
 	<div class="inline field" style="position:absolute;top: 10px; left: 10px;">
-		<div class="ui checkbox rehab box">
+		<!-- <div class="ui checkbox rehab box">
 	      <input type="checkbox" class="hidden" name="Rehabilitation" value="Rehabilitation">
 	      <label>Rehabilitation</label>
 	    </div>
@@ -15,10 +15,10 @@
 		<div class="ui checkbox toggle right aligned referdiet box" style="padding-left:80px">
 		  <input type="checkbox" class="hidden" name="referdiet" value="referdiet">
 		  <label>Refer to Dietician</label>
-		</div>
+		</div> -->
 
-		<a class="ui orange disabled label" id="stats_rehab" style="display: none;"></a>
-		<a class="ui orange disabled label" id="stats_physio" style="display: none;"></a>
+		<!-- <a class="ui orange disabled label" id="stats_rehab" style="display: none;"></a> -->
+		<!-- <a class="ui orange disabled label" id="stats_physio" style="display: none;"></a> -->
 	</div>
 
 	<div class="ui small blue icon buttons" id="btn_grp_edit_phys_ncase" style="position: absolute;

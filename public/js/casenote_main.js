@@ -101,16 +101,14 @@ $(document).ready(function () {
 				{ label: 'MRN', name: 'MRN', width: 9, classes: 'wrap', formatter: padzero, unformat: unpadzero, checked: true,  },
 				{ label: ' ', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' , hidden:true},
 				{ label: 'Time', name: 'reg_time', width: 10 ,classes: 'wrap', formatter: timeFormatter, unformat: timeUNFormatter},
-				{ label: 'Name', name: 'Name', width: 12 ,classes: 'wrap' },
-				{ label: 'Payer', name: 'payer', width: 12 ,classes: 'wrap' },
-				{ label: 'Dept', name: 'regdept', width: 8 ,classes: 'wrap' },
-				{ label: 'I/C', name: 'Newic', width: 15 ,classes: 'wrap' },
-				{ label: 'Rehab', name: 'reff_rehab', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'Physio', name: 'reff_physio', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'Diet', name: 'reff_diet', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'HP', name: 'telhp', width: 13 ,classes: 'wrap' , hidden:true},
-				{ label: 'Sex', name: 'Sex', width: 6 ,classes: 'wrap' },
-				{ label: 'Mode', name: 'pyrmode', width: 8 ,classes: 'wrap'},
+				{ label: 'Name', name: 'Name', width: 15 ,classes: 'wrap' },
+				{ label: 'Payer', name: 'payer', width: 20 ,classes: 'wrap' },
+				{ label: 'Dept', name: 'regdept', width: 8 ,classes: 'wrap' , hidden:true},
+				{ label: 'I/C', name: 'Newic', width: 12 ,classes: 'wrap' },
+				{ label: 'HP', name: 'telhp', width: 12 ,classes: 'wrap' , hidden:true},
+				{ label: 'Sex', name: 'Sex', width: 5 ,classes: 'wrap' },
+				{ label: 'Remark', name: 'Remarks', width: 12 ,classes: 'wrap'},
+				{ label: 'Mode', name: 'pyrmode', width: 8 ,classes: 'wrap', hidden:true},
 				{ label: 'Seen', name: 'doctorstatus', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick,hidden: true },
 				{ label: 'idno', name: 'idno', hidden: true, key:true},
 				{ label: 'DOB', name: 'DOB', hidden: true },
@@ -130,15 +128,8 @@ $(document).ready(function () {
 			height: 365,
 			rowNum: 30,
 			onSelectRow:function(rowid, selected){
-				if(checkifedited()){
-					return false;
-				}
 				empty_userfile();
 				$('button#timer_stop').click();
-				urlParam_trans.mrn = selrowData('#jqGrid').MRN;
-				urlParam_trans.episno = selrowData('#jqGrid').Episno;
-				urlParam_trans_diet.mrn = selrowData('#jqGrid').MRN;
-				urlParam_trans_diet.episno = selrowData('#jqGrid').Episno;
 				urlParam_trans_phys.mrn = selrowData('#jqGrid').MRN;
 				urlParam_trans_phys.episno = selrowData('#jqGrid').Episno;
 				addmore_onadd = false;
@@ -146,7 +137,7 @@ $(document).ready(function () {
 				addmore_onadd_diet = false;
 				// refreshGrid("#jqGrid_trans", urlParam_trans);
 				// refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
-				refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
+				// refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
 				
 				// empty_currDoctorNote();
 				// empty_transaction();
@@ -213,16 +204,14 @@ $(document).ready(function () {
 				{ label: 'MRN', name: 'MRN', width: 7, classes: 'wrap', formatter: padzero, unformat: unpadzero, checked: true,  },
 				{ label: 'Epis. No', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' , hidden:true},
 				{ label: 'Time', name: 'reg_time', width: 8 ,classes: 'wrap', formatter: timeFormatter, unformat: timeUNFormatter},
-				{ label: 'Name', name: 'Name', width: 12 ,classes: 'wrap' },
-				{ label: 'Payer', name: 'payer', width: 12 ,classes: 'wrap' },
-				{ label: 'Dept', name: 'regdept', width: 8 ,classes: 'wrap' },
+				{ label: 'Name', name: 'Name', width: 15 ,classes: 'wrap' },
+				{ label: 'Payer', name: 'payer', width: 20 ,classes: 'wrap' },
+				{ label: 'Dept', name: 'regdept', width: 8 ,classes: 'wrap' , hidden:true},
 				{ label: 'I/C', name: 'Newic', width: 12 ,classes: 'wrap' },
-				{ label: 'Rehab', name: 'reff_rehab', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'Physio', name: 'reff_physio', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'Diet', name: 'reff_diet', width: 8 ,classes: 'wrap',formatter: formatterstatus_tick2, unformat: UNformatterstatus_tick2 },
-				{ label: 'HP', name: 'telhp', width: 10 ,classes: 'wrap' },
+				{ label: 'HP', name: 'telhp', width: 12 ,classes: 'wrap' },
 				{ label: 'Sex', name: 'Sex', width: 5 ,classes: 'wrap' },
-				{ label: 'Mode', name: 'pyrmode', width: 10 ,classes: 'wrap'},
+				{ label: 'Remark', name: 'Remarks', width: 12 ,classes: 'wrap'},
+				{ label: 'Mode', name: 'pyrmode', width: 10 ,classes: 'wrap', hidden:true},
 				{ label: 'Seen', name: 'doctorstatus', width: 5 ,classes: 'wrap',formatter: formatterstatus_tick,hidden: true },
 				{ label: 'idno', name: 'idno', hidden: true, key:true},
 				{ label: 'DOB', name: 'DOB', hidden: true },
@@ -244,15 +233,8 @@ $(document).ready(function () {
 			height: 365,
 			rowNum: 30,
 			onSelectRow:function(rowid, selected){
-				if(checkifedited()){
-					return false;
-				}
 				empty_userfile();
 				$('button#timer_stop').click();
-				urlParam_trans.mrn = selrowData('#jqGrid').MRN;
-				urlParam_trans.episno = selrowData('#jqGrid').Episno;
-				urlParam_trans_diet.mrn = selrowData('#jqGrid').MRN;
-				urlParam_trans_diet.episno = selrowData('#jqGrid').Episno;
 				urlParam_trans_phys.mrn = selrowData('#jqGrid').MRN;
 				urlParam_trans_phys.episno = selrowData('#jqGrid').Episno;
 				addmore_onadd = false;
@@ -260,7 +242,7 @@ $(document).ready(function () {
 				addmore_onadd_diet = false;
 				// refreshGrid("#jqGrid_trans", urlParam_trans);
 				// refreshGrid("#jqGrid_trans_diet", urlParam_trans_diet);
-				refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
+				// refreshGrid("#jqGrid_trans_phys", urlParam_trans_phys);
 
 				// empty_currDoctorNote();
 				// empty_transaction();
@@ -316,12 +298,6 @@ $(document).ready(function () {
 		});
 
 	}
-	$("#jqGrid").jqGrid('setGroupHeaders', {
-		useColSpanStyle: true, 
-		groupHeaders:[
-			{startColumnName: 'reff_rehab', numberOfColumns: 3, titleText: '<em>Referral</em>'},
-		]
-	});
 	addParamField('#jqGrid',true,urlParam,['action']);
 	/////////////////////////start grid pager/////////////////////////////////////////////////////////
 	$("#jqGrid").jqGrid('navGrid', '#jqGridPager', {
