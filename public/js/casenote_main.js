@@ -99,7 +99,7 @@ $(document).ready(function () {
 			datatype: "local",
 			colModel: [
 				{ label: 'MRN', name: 'MRN', width: 9, classes: 'wrap', formatter: padzero, unformat: unpadzero, checked: true,  },
-				{ label: ' ', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' , hidden:true},
+				{ label: ' ', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' },
 				{ label: 'Time', name: 'reg_time', width: 10 ,classes: 'wrap', formatter: timeFormatter, unformat: timeUNFormatter},
 				{ label: 'Name', name: 'Name', width: 15 ,classes: 'wrap' },
 				{ label: 'Payer', name: 'payer', width: 20 ,classes: 'wrap' },
@@ -202,7 +202,7 @@ $(document).ready(function () {
 			datatype: "local",
 			colModel: [
 				{ label: 'MRN', name: 'MRN', width: 7, classes: 'wrap', formatter: padzero, unformat: unpadzero, checked: true,  },
-				{ label: 'Epis. No', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' , hidden:true},
+				{ label: 'Epis. No', name: 'Episno', width: 5 ,align: 'right',classes: 'wrap' },
 				{ label: 'Time', name: 'reg_time', width: 8 ,classes: 'wrap', formatter: timeFormatter, unformat: timeUNFormatter},
 				{ label: 'Name', name: 'Name', width: 15 ,classes: 'wrap' },
 				{ label: 'Payer', name: 'payer', width: 20 ,classes: 'wrap' },
