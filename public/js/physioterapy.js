@@ -345,7 +345,7 @@ function populate_phys(obj){
 	$('#name_show_phys').text(obj.Name);
 	$('#mrn_show_phys').text(("0000000" + obj.MRN).slice(-7));
 	$('#sex_show_phys').text(if_none(obj.Sex).toUpperCase());
-	$('#dob_show_phys').text(dob_chg(obj.DOB));
+	$('#dob_show_phys').text(obj.DOB);
 	$('#age_show_phys').text(dob_age(obj.DOB)+' (YRS)');
 	$('#race_show_phys').text(if_none(obj.RaceCode).toUpperCase());
 	$('#religion_show_phys').text(if_none(obj.religion).toUpperCase());

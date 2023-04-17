@@ -170,14 +170,14 @@
     <script type="text/ecmascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script type="text/ecmascript" src="{{ asset('assets/form-validator/jquery.form-validator.min.js') }}/"></script>
-    <script type="text/javascript" src="{{ asset('js/userfile_casenote.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/userfile_casenote.js') }}?v=1"></script>
     <!-- <script type="text/javascript" src="{{ asset('js/transaction_casenote.js') }}"></script> -->
     <!-- <script type="text/javascript" src="{{ asset('js/transaction_diet.js') }}"></script> -->
     <script type="text/javascript" src="{{ asset('js/transaction_phys.js') }}"></script>
     <!-- <script type="text/javascript" src="{{ asset('js/casenote.js') }}"></script> -->
     <!-- <script type="text/javascript" src="{{ asset('js/nursing_casenote.js') }}"></script> -->
     <!-- <script type="text/javascript" src="{{ asset('js/dieteticCareNotes.js') }}"></script> -->
-    <script type="text/javascript" src="{{ asset('js/physioterapy.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/physioterapy.js') }}?v=1"></script>
     <script type="text/javascript" src="{{ asset('js/physioterapy_ncase.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/casenote_main.js') }}"></script>
 @endsection
