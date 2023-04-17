@@ -513,7 +513,6 @@
         $('#hid_RaceCode').val(rowdata.RaceCode);
         $('#hid_Religion').val(rowdata.Religion);
         $('#hid_ID_Type').val(rowdata.ID_Type);
-        let DOB = new Date(row.DOB);
         $('#txt_pat_dob').val(getthedob(rowdata.DOB));
         $('#txt_pat_age').val(gettheage(rowdata.DOB));
         $('#txt_pat_telh').val(rowdata.telh);
