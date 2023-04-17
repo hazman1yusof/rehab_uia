@@ -118,6 +118,14 @@
         return null;
     }
 
+    function getthedob(dob){
+        if(dob != ''){
+            var dob = new Date(dob);
+            return moment(dob).format('DD-MM-YYYY');
+        }
+        return null;
+    }
+
     $('#mdl_patient_info').on('shown.bs.modal', function (e) {
         if($("#btn_register_patient").data("oper") == "add"){
             $('#btn_register_episode').hide();
@@ -505,7 +513,8 @@
         $('#hid_RaceCode').val(rowdata.RaceCode);
         $('#hid_Religion').val(rowdata.Religion);
         $('#hid_ID_Type').val(rowdata.ID_Type);
-        $('#txt_pat_dob').val(rowdata.DOB);
+        let DOB = new Date(row.DOB);
+        $('#txt_pat_dob').val(getthedob(rowdata.DOB));
         $('#txt_pat_age').val(gettheage(rowdata.DOB));
         $('#txt_pat_telh').val(rowdata.telh);
         $('#txt_pat_telhp').val(rowdata.telhp);
